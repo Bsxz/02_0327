@@ -20,13 +20,13 @@ export default {
 
 <style lang="stylus" rel="stylesheet/stylus">
 .header
-  background-color #02a774
+  background-color #2694d4
   position fixed
   z-index 100
   left 0
   top 0
   width 100%
-  height 45px
+  height 55px
 
   .header_search
     position absolute
@@ -64,4 +64,7 @@ export default {
 
     .header_login_text
       color #fff
+
+      .icon-geren1
+        font-size 30px
 </style>

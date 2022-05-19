@@ -29,7 +29,7 @@ export default {
   width 100%
   .search_form
     clearFix()
-    margin-top 45px
+    margin-top 55px
     background-color #fff
     padding 12px 8px
 
@@ -51,8 +51,8 @@ export default {
       &.search_submit
         float right
         width 18%
-        border 4px solid #02a774
+        border 4px solid #2694d4
         font-size 16px
         color #fff
-        background-color #02a774
+        background-color #2694d4
 </style>

@@ -1,12 +1,17 @@
 <template>
   <section class="msite">
     <header-top :title="address.name">
-      <span class="header_search" slot="left">
+      <router-link to="/search" class="header_search" slot="left">
         <span class="iconfont icon-sousuo"></span>
-      </span>
-      <span class="header_login" slot="right">
-        <span class="header_login_text">登入|注册</span>
-      </span>
+      </router-link>
+      <router-link :to="userInfo._id ? '/userinfo' : '/login'" class="header_login" slot="right">
+        <span class="header_login_text" v-if="!userInfo._id">
+          登入|注册
+        </span>
+        <span class="header_login_text" v-else>
+          <i class="iconfont icon-geren1"></i>
+        </span>
+      </router-link>
     </header-top>
     <!--首页导航-->
     <nav class="msite_nav">
@@ -53,22 +58,21 @@ export default {
   },
   mapState,
   mounted () {
-    // 创建swiper实例对象，来实现轮播
-    /* eslint-disable no-new */
-    new Swiper('.swiper-container', {
-      // 可以循环轮播
-      loop: true,
-      // 如果需要分页器
-      pagination: {
-        el: '.swiper-pagination'
-      }
-    })
-
     this.$store.dispatch('getCategorys')
     this.$store.dispatch('getShops')
+    // 创建swiper实例对象，来实现轮播
+    /* eslint-disable no-new */
+    // new Swiper('.swiper-container', {
+    //   // 可以循环轮播
+    //   loop: true,
+    //   // 如果需要分页器
+    //   pagination: {
+    //     el: '.swiper-pagination'
+    //   }
+    // })
   },
   computed: {
-    ...mapState(['address', 'categorys']),
+    ...mapState(['address', 'categorys', 'userInfo']),
     categorysArr () {
       const max = 8
       const arr = []

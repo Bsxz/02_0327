@@ -5,21 +5,28 @@
         <span class="header_title_text"></span>
       </a>
     </header-top>
-    <section class="order_no_login">
+                                          <!--  用户登入之后不显示  -->
+    <section class="order_no_login" v-if="!userInfo._id">
       <img src="./images/person.png">
       <h3>登录后查看外卖订单</h3>
-      <button>立即登陆</button>
+      <router-link to="/login">
+        <button class="btn">立即登陆</button>
+      </router-link>
     </section>
   </section>
 </template>
 
 <script type="text/ecmascript-6">
 import HeaderTop from '../../components/HeaderTop/HeaderTop'
+import {mapState} from 'vuex'
 
 export default {
   name: 'Order',
   components: {
     HeaderTop
+  },
+  computed: {
+    ...mapState(['userInfo'])
   }
 }
 </script>
@@ -45,9 +52,9 @@ export default {
       font-size 17px
       color #6a6a6a
 
-    > button
+    .btn
       display inline-block
-      background #02a774
+      background #2694d4
       font-size 14px
       color #fff
       border 0
