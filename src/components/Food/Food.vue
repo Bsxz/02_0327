@@ -3,11 +3,8 @@
     <div class="food-content">
       <div class="image-header">
         <img
-<<<<<<< HEAD
           v-lazy="food.image">
-=======
           :src="food.image">
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
         <p class="foodpanel-desc">{{ food.info }}</p>
         <div class="back">
           <i class="iconfont icon-jiantou1" @click="toggleShow"></i>

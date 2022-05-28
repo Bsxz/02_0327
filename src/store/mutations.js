@@ -8,18 +8,11 @@ import {
   RECEIVE_GOODS,
   RECEIVE_INFO,
   RECEIVE_RATINGS,
-<<<<<<< HEAD
   RECEIVE_SEARCH_SHOPS,
   RECEIVE_SHOPS,
   RECEIVE_USER_INFO,
   RECREMENT_FOOD_COUNT,
   RESTE_USER
-=======
-  RECEIVE_INFO,
-  INCREMENT_FOOD_COUNT,
-  RECREMENT_FOOD_COUNT,
-  CLEAR_CART
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
 } from './mutation-types'
 
 export default {
@@ -68,11 +61,8 @@ export default {
     // eslint-disable-next-line no-return-assign
     state.foodcart.forEach(food => food.count = 0)
     state.foodcart = []
-<<<<<<< HEAD
   },
   [RECEIVE_SEARCH_SHOPS] (state, {searchShops}) {
     state.searchShops = searchShops
-=======
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
   }
 }

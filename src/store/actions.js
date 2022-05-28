@@ -19,18 +19,11 @@ import {
   RECEIVE_GOODS,
   RECEIVE_INFO,
   RECEIVE_RATINGS,
-<<<<<<< HEAD
   RECEIVE_SEARCH_SHOPS,
   RECEIVE_SHOPS,
   RECEIVE_USER_INFO,
-  RECREMENT_FOOD_COUNT,
-  RESTE_USER
-=======
-  RECEIVE_INFO,
-  INCREMENT_FOOD_COUNT,
-  RECREMENT_FOOD_COUNT,
-  CLEAR_CART
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
+  RESTE_USER,
+  RECREMENT_FOOD_COUNT
 } from './mutation-types'
 
 export default {
@@ -108,7 +101,6 @@ export default {
   // 11.同步更新清空购物车
   clearCart ({commit}) {
     commit(CLEAR_CART)
-<<<<<<< HEAD
   },
   // 12.同步获取关键字信息
   async searchShop ({commit, state}, keyword) {
@@ -118,7 +110,5 @@ export default {
     if (result.code === 0) {
       commit(RECEIVE_SEARCH_SHOPS, {searchShops: result.data})
     }
-=======
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
   }
 }

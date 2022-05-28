@@ -3,113 +3,66 @@
     <div class="ratings-content">
       <div class="overview">
         <div class="overview-left">
-<<<<<<< HEAD
-          <h1 class="score">{{ info.score }}</h1>
-=======
-          <h1 class="score">4.7</h1>
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
+          <h1 class="score">{{info.score}}</h1>
           <div class="title">综合评分</div>
-          <div class="rank">高于周边商家 99%</div>
+          <div class="rank">高于周边商家99%</div>
         </div>
         <div class="overview-right">
           <div class="score-wrapper">
             <span class="title">服务态度</span>
-            <Star :score="4.6" :size="36"/>
-<<<<<<< HEAD
-            <span class="score">{{ info.serviceScore }}</span>
-=======
-            <span class="score">4.6</span>
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
+            <Star :score="info.serviceScore" :size="36" />
+            <span class="score">{{info.serviceScore}}</span>
           </div>
           <div class="score-wrapper">
             <span class="title">商品评分</span>
-            <Star :score="4.7" :size="36"/>
-<<<<<<< HEAD
-            <span class="score">{{ info.foodScore }}</span>
+            <Star :score="info.foodScore" :size="36" />
+            <span class="score">{{info.foodScore}}</span>
           </div>
           <div class="delivery-wrapper">
             <span class="title">送达时间</span>
-            <span class="delivery">{{ info.deliveryTime }} 分钟</span>
-=======
-            <span class="score">4.7</span>
-          </div>
-          <div class="delivery-wrapper">
-            <span class="title">送达时间</span>
-            <span class="delivery">30 分钟</span>
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
+            <span class="delivery">{{info.deliveryTime}}分钟</span>
           </div>
         </div>
       </div>
+
       <div class="split"></div>
+
       <div class="ratingselect">
         <div class="rating-type border-1px">
-<<<<<<< HEAD
-          <span :class="{active: selectType === 2}"
-                class="block positive"
-                @click="setSelectType(2)"
-          >全部<span class="count">{{ ratings.length }}</span></span>
-          <span :class="{active: selectType === 0}"
-                class="block positive"
-                @click="setSelectType(0)"
-          >满意<span class="count">{{ positiveSize }}</span></span>
-          <span :class="{active: selectType === 1}"
-                class="block negative"
-                @click="setSelectType(1)"
-          >不满意<span class="count">{{ ratings.length - positiveSize }}</span></span>
+          <span class="block positive" :class="{active: selectType===2}" @click="setSelectType(2)">
+            全部<span class="count">{{ratings.length}}</span>
+          </span>
+          <span class="block positive" :class="{active: selectType===0}" @click="setSelectType(0)">
+            满意<span class="count">{{positiveSize}}</span>
+          </span>
+          <span class="block negative" :class="{active: selectType===1}" @click="setSelectType(1)">
+            不满意<span class="count">{{ratings.length-positiveSize}}</span>
+          </span>
         </div>
-        <div :class="{on:onlyShowText}" class="switch">
-          <span class="iconfont icon-duigou" @click="toggleShowText"></span>
-=======
-<span class="block positive active">
-全部<span class="count">30</span>
-</span>
-          <span class="block positive">
-满意<span class="count">28</span>
-</span>
-          <span class="block negative">
-不满意<span class="count">2</span>
-</span>
-        </div>
-        <div class="switch on">
+        <div class="switch" :class="{on: onlyShowText}" @click="toggleShowText">
           <span class="iconfont icon-check_circle"></span>
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
           <span class="text">只看有内容的评价</span>
         </div>
       </div>
+
       <div class="rating-wrapper">
         <ul>
-<<<<<<< HEAD
-          <li v-for="(item,index) in filterRatings" :key="index" class="rating-item">
+          <li class="rating-item" v-for="(rating, index) in filterRatings" :key="index">
             <div class="avatar">
-              <img width="28" height="28"
-                   v-lazy="item.avatar">
-=======
-          <li class="rating-item" v-for="(item,index) in ratings" :key="index">
-            <div class="avatar">
-              <img width="28" height="28"
-                   :src="item.avatar">
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
+              <img width="28" height="28" :src="rating.avatar">
             </div>
             <div class="content">
-              <h1 class="name">{{ item.username }}</h1>
+              <h1 class="name">{{rating.username}}</h1>
               <div class="star-wrapper">
-                <Star :score="item.score" :size="24"/>
-                <span class="delivery">{{ item.deliveryTime }}</span>
+                <Star :score="rating.score" :size="24" />
+                <span class="delivery">{{rating.deliveryTime}}</span>
               </div>
-              <p class="text">{{ item.text }}</p>
+              <p class="text">{{rating.text}}</p>
               <div class="recommend">
-<<<<<<< HEAD
-                <span :class="item.rateType === 0 ? 'icon-tuijiansel' : 'icon-icon-thumb_down'"
-                      class="iconfont"></span>
-                <span class="item" v-for="(recommend,index) in item.recommend" :key="index">{{ recommend }}</span>
+                <span class="iconfont" :class="rating.rateType===0 ? 'icon-tuijiansel' : 'icon-icon-thumb_down'"></span>
+                <span class="item" v-for="(item, index) in rating.recommend" :key="index">{{item}}</span>
               </div>
-              <div class="time">{{ item.rateTime | date-format }}</div>
-=======
-                <span class="iconfont icon-tuijiansel"></span>
-                <span class="item" v-for="(recommend,index) in item.recommend" :key="index">{{ recommend }}</span>
-              </div>
-              <div class="time">{{ item.rateTime }}</div>
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
+              <div class="time">{{rating.rateTime | date-format}}</div>
             </div>
           </li>
         </ul>
@@ -119,7 +72,6 @@
 </template>
 
 <script type="text/ecmascript-6">
-<<<<<<< HEAD
 import Star from '../../../components/Star/Star'
 import BetterScroll from 'better-scroll'
 import {mapGetters, mapState} from 'vuex'
@@ -160,16 +112,6 @@ export default {
     setSelectType (type) {
       this.selectType = type
     }
-=======
-import {mapState} from 'vuex'
-
-export default {
-  mounted () {
-    this.$store.dispatch('getShopRatings')
-  },
-  computed: {
-    ...mapState(['ratings'])
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
   }
 }
 </script>
@@ -283,11 +225,8 @@ export default {
         background: rgba(77, 85, 93, 0.2)
 
         &.active
-<<<<<<< HEAD
           background: $blue
-=======
           background: $green
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
           color: #fff
 
         .count
@@ -302,17 +241,14 @@ export default {
       font-size: 0
 
       &.on
-<<<<<<< HEAD
         .icon-duigou
           color: $blue
 
       .icon-duigou
-=======
         .icon-check_circle
           color: $green
 
       .icon-check_circle
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
         display: inline-block
         vertical-align: top
         margin-right: 4px
@@ -383,14 +319,12 @@ export default {
           .icon-tuijiansel
             color: $yellow
 
-<<<<<<< HEAD
           .icon-icon-thumb_down
             color: rgb(147, 153, 159)
             font-size: 9px
-=======
+
           .icon-thumb_down
             color: rgb(147, 153, 159)
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
 
           .item
             padding: 0 6px

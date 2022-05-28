@@ -1,49 +1,35 @@
 <template>
   <div>
     <div class="goods">
-      <div class="menu-wrapper" ref="menuWrapper">
+      <div class="menu-wrapper">
         <ul>
-          <li class="menu-item"
-              v-for="(item,index) in goods"
-              :key="index"
-              :class="{current: index===currentIndex}"
-              @click="clickMeunItem(index)">
+          <!--current-->
+          <li class="menu-item" v-for="(good, index) in goods" :key="index"
+              :class="{current: index===currentIndex}" @click="clickMeunItem(index)">
             <span class="text bottom-border-1px">
-<<<<<<< HEAD
-            <img v-if="item.icon" v-lazy="item.icon" class="icon">
-=======
-            <img class="icon" :src="item.icon" v-if="item.icon">
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
-            {{ item.name }}
+              <img class="icon" :src="good.icon" v-if="good.icon">
+              {{ good.name }}
             </span>
           </li>
         </ul>
       </div>
-      <div class="foods-wrapper" ref="foodsWrapper">
+      <div class="foods-wrapper">
         <ul ref="foodsUl">
-          <li class="food-list-hook"
-              v-for="(item,index) in goods"
-              :key="index">
-            <h1 class="title">{{ item.name }}</h1>
+          <li class="food-list-hook" v-for="(good, index) in goods" :key="index">
+            <h1 class="title">{{ good.name }}</h1>
             <ul>
-              <li class="food-item bottom-border-1px"
-                  v-for="(food,index) in goods[index].foods"
-                  :key="index"
-                  @click="showFood(food)">
+              <li class="food-item bottom-border-1px" v-for="(food, index) in good.foods"
+                  :key="index" @click="showFood(food)">
                 <div class="icon">
-                  <img width="57" height="57"
-<<<<<<< HEAD
-                       v-lazy="food.image">
-=======
-                       :src="food.image">
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
+                  <img width="57" height="57" :src="food.icon">
                 </div>
                 <div class="content">
                   <h2 class="name">{{ food.name }}</h2>
                   <p class="desc">{{ food.description }}</p>
                   <div class="extra">
-                    <span class="count">月售 {{ food.sellCount }} 份</span>
-                    <span>好评率 {{ food.rating }}%</span></div>
+                    <span class="count">月售{{ food.sellCount }}份</span>
+                    <span>好评率{{ food.rating }}%</span>
+                  </div>
                   <div class="price">
                     <span class="now">￥{{ food.price }}</span>
                     <span class="old" v-if="food.oldPrice">￥{{ food.oldPrice }}</span>
@@ -57,20 +43,18 @@
           </li>
         </ul>
       </div>
-      <shop-cart :shopcart="foodcart"/>
+      <ShopCart/>
     </div>
-    <transition name="food">
-      <food :food="food" ref="food"/>
-    </transition>
+    <Food :food="food" ref="food"/>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import {mapState} from 'vuex'
 import BetterScroll from 'better-scroll'
-import Cartcontrol from './Cartcontrol/Cartcontrol'
 import Food from '../../../components/Food/Food'
 import ShopCart from '../../../components/ShopCart/ShopCart'
+import cartcontrol from './Cartcontrol/Cartcontrol'
 
 export default {
   name: 'ShopGoods',
@@ -156,7 +140,7 @@ export default {
       this.$refs.food.toggleShow()
     }
   },
-  components: {Cartcontrol, Food, ShopCart}
+  components: {Food, ShopCart, cartcontrol}
 }
 </script>
 

@@ -8,10 +8,6 @@ export default {
   goods: [], // 商品列表
   ratings: [], // 商家评价列表
   info: {}, // 商家信息
-<<<<<<< HEAD
   foodcart: [], // 购物车数组
   searchShops: []
-=======
-  foodcart: [] // 购物车数组
->>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
 }
