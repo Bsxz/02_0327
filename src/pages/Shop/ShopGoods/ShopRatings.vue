@@ -316,7 +316,6 @@ export default {
           .icon-tuijiansel
             color: $yellow
 
-
           .icon-icon-thumb_down
             color: rgb(147, 153, 159)
             font-size: 9px
