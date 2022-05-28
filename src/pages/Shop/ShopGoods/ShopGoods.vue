@@ -9,7 +9,11 @@
               :class="{current: index===currentIndex}"
               @click="clickMeunItem(index)">
             <span class="text bottom-border-1px">
+<<<<<<< HEAD
             <img v-if="item.icon" v-lazy="item.icon" class="icon">
+=======
+            <img class="icon" :src="item.icon" v-if="item.icon">
+>>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
             {{ item.name }}
             </span>
           </li>
@@ -28,7 +32,11 @@
                   @click="showFood(food)">
                 <div class="icon">
                   <img width="57" height="57"
+<<<<<<< HEAD
                        v-lazy="food.image">
+=======
+                       :src="food.image">
+>>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
                 </div>
                 <div class="content">
                   <h2 class="name">{{ food.name }}</h2>

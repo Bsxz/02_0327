@@ -6,6 +6,7 @@ import Order from '../pages/Order/Order'
 import Profile from '../pages/Profile/Profile'
 import Login from '../pages/Login/Login'
 import Shop from '../pages/Shop/Shop'
+<<<<<<< HEAD
 // import Msite from '../pages/Msite/Msite'
 // import ShopGoods from '../pages/Shop/ShopGoods/ShopGoods'
 // import ShopRatings from '../pages/Shop/ShopGoods/ShopRatings'
@@ -19,6 +20,11 @@ const ShopInfo = () => import('../pages/Shop/ShopGoods/ShopInfo')
 // const Profile = () => import('../pages/Profile/Profile')
 // const Login = () => import('../pages/Login/Login')
 // const Shop = () => import('../pages/Shop/Shop')
+=======
+import ShopGoods from '../pages/Shop/ShopGoods/ShopGoods'
+import ShopInfo from '../pages/Shop/ShopGoods/ShopInfo'
+import ShopRatings from '../pages/Shop/ShopGoods/ShopRatings'
+>>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
 
 Vue.use(VueRouter)
 

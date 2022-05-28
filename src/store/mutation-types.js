@@ -11,4 +11,7 @@ export const RECEIVE_INFO = 'receive_info' // 接收商家信息
 export const INCREMENT_FOOD_COUNT = 'increment_food_count' // 接收count值增加
 export const RECREMENT_FOOD_COUNT = 'recrement_food_count' // 接收count值减少
 export const CLEAR_CART = 'clear_cart' // 清空购物车
+<<<<<<< HEAD
 export const RECEIVE_SEARCH_SHOPS = 'receive_search_shops' // 关键字获取商家数组
+=======
+>>>>>>> d8106d107152237645cc0fb3c18a8875eea6f9cf
