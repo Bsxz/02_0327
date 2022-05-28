@@ -1,15 +1,29 @@
 /*  vuex的actions模块  */
 
-import {reqAddress, reqCategorys, reqShops, reqUser, reqLogout, reqShopInfo, reqShopGoods, reqShopRatings} from '../api'
 import {
+  reqAddress,
+  reqCategorys,
+  reqLogout,
+  reqSearchGoods,
+  reqShopGoods,
+  reqShopInfo,
+  reqShopRatings,
+  reqShops,
+  reqUser
+} from '../api'
+import {
+  CLEAR_CART,
+  INCREMENT_FOOD_COUNT,
   RECEIVE_ADDRESS,
   RECEIVE_CATEGORYS,
+  RECEIVE_GOODS,
+  RECEIVE_INFO,
+  RECEIVE_RATINGS,
+  RECEIVE_SEARCH_SHOPS,
   RECEIVE_SHOPS,
   RECEIVE_USER_INFO,
-  RESTE_USER,
-  RECEIVE_GOODS,
-  RECEIVE_RATINGS,
-  RECEIVE_INFO
+  RECREMENT_FOOD_COUNT,
+  RESTE_USER
 } from './mutation-types'
 
 export default {
@@ -50,20 +64,17 @@ export default {
     }
   },
   // 7.异步获取商家信息
-  async getShopInfo ({commit}, cb) {
+  async getShopInfo ({commit}) {
     const result = await reqShopInfo()
     if (result.code === 0) {
       const info = result.data
-      info.score = 3.5
       commit(RECEIVE_INFO, {info})
-      cb && cb()
     }
   },
   // 8.异步获取商家商品评价数组
   async getShopRatings ({commit}, cb) {
     const result = await reqShopRatings()
-    console.log('8' + result)
-    if (result === 0) {
+    if (result.code === 0) {
       const ratings = result.data
       commit(RECEIVE_RATINGS, {ratings})
       cb && cb()
@@ -72,11 +83,32 @@ export default {
   // 9.异步获取商家商品数组
   async getShopGoods ({commit}, cb) {
     const result = await reqShopGoods()
-    if (result === 0) {
+    if (result.code === 0) {
       const goods = result.data
       commit(RECEIVE_GOODS, {goods})
-      // 如果组件中传递了接收消息的回调函数, 数据更新后, 调用回调通知调用的组件
+      // 数据更新了, 通知一下组件
       cb && cb()
+    }
+  },
+  // 10.同步更新foodcount的数据
+  updataFoodCount ({commit}, {isAdd, food}) {
+    if (isAdd) {
+      commit(INCREMENT_FOOD_COUNT, {food})
+    } else {
+      commit(RECREMENT_FOOD_COUNT, {food})
+    }
+  },
+  // 11.同步更新清空购物车
+  clearCart ({commit}) {
+    commit(CLEAR_CART)
+  },
+  // 12.同步获取关键字信息
+  async searchShop ({commit, state}, keyword) {
+    const {latitude, longitude} = state
+    const geohash = latitude + ',' + longitude
+    const result = await reqSearchGoods(geohash, keyword)
+    if (result.code === 0) {
+      commit(RECEIVE_SEARCH_SHOPS, {searchShops: result.data})
     }
   }
 }

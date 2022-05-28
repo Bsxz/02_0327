@@ -7,7 +7,7 @@
     </nav>
     <div class="shop-content">
       <img class="content-image"
-           :src="info.avatar">
+           v-lazy="info.avatar">
       <div class="header-content">
         <h2 class="content-title">
           <span class="content-tag"><span class="mini-tag">品牌</span></span>
@@ -114,7 +114,7 @@ export default {
     this.$store.dispatch('getShopInfo')
   },
   computed: {
-    ...mapState(['info', 'ratings', 'goods'])
+    ...mapState(['info'])
   },
   methods: {
     toggleshopShow () {

@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "叫了只炸鸡（交大校内店）",
-    "description": "大锤专送",
+    "name": "嘉禾一品（温都水城）",
+    "description": "硅谷专送",
     "deliveryTime": 28,
     "score": 4.2,
     "serviceScore": 4.1,
@@ -12,7 +12,7 @@
     "ratingCount": 24,
     "sellCount": 90,
     "distance": "1000m",
-    "bulletin": "叫了只鸡为基尚皇餐饮原创品牌，以其独特的腌料配方，严格的烘炸工艺，吸睛多样的包装，掀起大吉大利吃鸡热潮，因市场的火爆有不法公司模仿我们，但口味与我们相差甚远",
+    "bulletin": "是以粥为特色的中式营养快餐，自2004年10月18日创立“嘉和一品”品牌至今，不断优化管理，积极创新，立足于“贴近百姓生活，服务千家万户”",
     "supports": [
       {
         "type": 0,
@@ -55,16 +55,16 @@
         "content": "【立减19.8】半价单人餐"
       }
     ],
-    "avatar": "https://p0.meituan.net/business/36783754125a4d2155fd4559a3cda37b62028.jpg@130w",
-    "bgImg": "https://p0.meituan.net/business/a66eeaf2c2906280c0e41d3d91883088187432.png@750w",
+    "avatar": "https://fuss10.elemecdn.com/8/40/02872ce8aefe75c16d3190e75ad61jpeg.jpeg",
+    "bgImg": "https://fuss10.elemecdn.com/f/5c/ead54394c3de198d3e6d3e9111bbfpng.png",
     "pics": [
-      "https://i01piccdn.sogoucdn.com/6a35782e4f79d822",
-      "http://www.jiaolezhiji.com/uploads/img1/20170524/59251d62169ae.jpg",
+      "https://fuss10.elemecdn.com/f/7f/d1422ec824a0a9d1fb879c57ab533jpeg.jpeg",
+      "https://fuss10.elemecdn.com/6/82/2cd3d681f5e93292b3eb49d6b412ajpeg.jpeg",
       "https://fuss10.elemecdn.com/8/93/4cf527b6462eea634f69755374f88jpeg.jpeg",
       "https://fuss10.elemecdn.com/3/f2/2a8796ba025a5773fd685a95ac369jpeg.jpeg",
       "https://fuss10.elemecdn.com/a/c4/5a78f477fd616a51ce33586a76ddbjpeg.jpeg"
     ],
-    "category": "炸鸡店，简餐",
+    "category": "包子粥店, 简餐",
     "phone": "13768549632",
     "address": "南昌市青山湖区南昌经济技术开发区双港东大街华东交通大学808号南铁技机校3栋3单元101室",
     "workTime": "09:35-24:00"

@@ -20,7 +20,7 @@
           <div class="swiper-slide" v-for="(cs,index) in categorysArr" :key="index">
             <a href="javascript:" class="link_to_food" v-for="(c,index2) in cs" :key="index2">
               <div class="food_container">
-                <img :src="imgBaseUrl+c.image_url">
+                <img v-lazy="imgBaseUrl+c.image_url">
               </div>
               <span>{{ c.title }}</span>
             </a>
@@ -157,6 +157,6 @@ export default {
 
       .swiper-pagination
         > span.swiper-pagination-bullet-active
-          background #02a774
+          background #2694d4
 
 </style>

@@ -57,3 +57,7 @@ export const reqShopRatings = () => ajax('/ratings')
  *  获取商家商品数组
  */
 export const reqShopGoods = () => ajax('/goods')
+/**
+ *  根据关键字获取相关商家数组
+ */
+export const reqSearchGoods = (geohash, keyword) => ajax('/api/search_shops', {geohash, keyword})
