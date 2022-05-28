@@ -10,11 +10,6 @@ import Shop from '../pages/Shop/Shop'
 import ShopGoods from '../pages/Shop/ShopGoods/ShopGoods'
 import ShopInfo from '../pages/Shop/ShopGoods/ShopInfo'
 import ShopRatings from '../pages/Shop/ShopGoods/ShopRatings'
-// const originalPush = VueRouter.prototype.replace
-
-// VueRouter.prototype.replace = function replace (location) {
-//   return originalPush.call(this, location).catch(err => err)
-// }
 
 Vue.use(VueRouter)
 

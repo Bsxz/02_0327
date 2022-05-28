@@ -114,7 +114,7 @@ export default {
     this.$store.dispatch('getShopInfo')
   },
   computed: {
-    ...mapState(['info', 'ratings', 'goods'])
+    ...mapState(['info'])
   },
   methods: {
     toggleshopShow () {

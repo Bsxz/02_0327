@@ -1,5 +1,5 @@
+import Vue from 'vue'
 /*  vuex的mutations模块  */
-
 import {
   RECEIVE_ADDRESS,
   RECEIVE_CATEGORYS,
@@ -8,7 +8,10 @@ import {
   RESTE_USER,
   RECEIVE_GOODS,
   RECEIVE_RATINGS,
-  RECEIVE_INFO
+  RECEIVE_INFO,
+  INCREMENT_FOOD_COUNT,
+  RECREMENT_FOOD_COUNT,
+  CLEAR_CART
 } from './mutation-types'
 
 export default {
@@ -35,5 +38,27 @@ export default {
   },
   [RECEIVE_GOODS] (state, {goods}) {
     state.goods = goods
+  },
+  [INCREMENT_FOOD_COUNT] (state, {food}) {
+    if (!food.count) {
+      // food.count = 1  // 没有数据代理
+      Vue.set(food, 'count', 1)
+      state.foodcart.push(food)
+    } else {
+      food.count++
+    }
+  },
+  [RECREMENT_FOOD_COUNT] (state, {food}) {
+    if (food.count) {
+      food.count--
+      if (food.count === 0) {
+        state.foodcart.splice(state.foodcart.indexOf(food), 1)
+      }
+    }
+  },
+  [CLEAR_CART] (state) {
+    // eslint-disable-next-line no-return-assign
+    state.foodcart.forEach(food => food.count = 0)
+    state.foodcart = []
   }
 }

@@ -8,3 +8,6 @@ export const RESTE_USER = 'reste_user' // 重置用户信息
 export const RECEIVE_GOODS = 'receive_goods' // 接收商家商品数组
 export const RECEIVE_RATINGS = 'receive_ratings' // 接收商家商品评价数组
 export const RECEIVE_INFO = 'receive_info' // 接收商家信息
+export const INCREMENT_FOOD_COUNT = 'increment_food_count' // 接收count值增加
+export const RECREMENT_FOOD_COUNT = 'recrement_food_count' // 接收count值减少
+export const CLEAR_CART = 'clear_cart' // 清空购物车

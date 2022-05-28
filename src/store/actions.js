@@ -9,7 +9,10 @@ import {
   RESTE_USER,
   RECEIVE_GOODS,
   RECEIVE_RATINGS,
-  RECEIVE_INFO
+  RECEIVE_INFO,
+  INCREMENT_FOOD_COUNT,
+  RECREMENT_FOOD_COUNT,
+  CLEAR_CART
 } from './mutation-types'
 
 export default {
@@ -62,8 +65,7 @@ export default {
   // 8.异步获取商家商品评价数组
   async getShopRatings ({commit}, cb) {
     const result = await reqShopRatings()
-    console.log('8' + result)
-    if (result === 0) {
+    if (result.code === 0) {
       const ratings = result.data
       commit(RECEIVE_RATINGS, {ratings})
       cb && cb()
@@ -72,11 +74,23 @@ export default {
   // 9.异步获取商家商品数组
   async getShopGoods ({commit}, cb) {
     const result = await reqShopGoods()
-    if (result === 0) {
+    if (result.code === 0) {
       const goods = result.data
       commit(RECEIVE_GOODS, {goods})
       // 如果组件中传递了接收消息的回调函数, 数据更新后, 调用回调通知调用的组件
       cb && cb()
     }
+  },
+  // 10.同步更新foodcount的数据
+  updataFoodCount ({commit}, {isAdd, food}) {
+    if (isAdd) {
+      commit(INCREMENT_FOOD_COUNT, {food})
+    } else {
+      commit(RECREMENT_FOOD_COUNT, {food})
+    }
+  },
+  // 11.同步更新清空购物车
+  clearCart ({commit}) {
+    commit(CLEAR_CART)
   }
 }
