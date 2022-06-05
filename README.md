@@ -5,24 +5,24 @@
 ## Build Setup
 
 ``` bash
-# install dependencies
-npm install
+#  下载依赖
+yarn install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# 启动项目
+yarn dev
 
-# build for production with minification
-npm run build
+# 打包项目
+yarn build
 
-# build for production and view the bundle analyzer report
-npm run build --report
+# 项目可视化大小
+yarn build --report
 
-# run unit tests
-npm run unit
+# 启动数据库
+yarn start
 
-# run e2e tests
-npm run e2e
+# yarn unit tests
 
-# run all tests
-npm test
+# yarn e2e tests
+
+# yarn all tests
 ```
